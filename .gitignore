@@ -135,3 +135,12 @@ datasets/
 
 # vscode folder
 .vscode
+
+# Ignore data folder
+data/**
+
+# nuctl binary file
+nuctl
+
+# checkpoint file
+checkpoint.pth
