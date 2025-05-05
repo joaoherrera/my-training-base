@@ -1,5 +1,4 @@
-"""Extract patches from a set of images and save them on disk.
-"""
+"""Extract patches from a set of images and save them on disk."""
 
 from argparse import ArgumentParser
 from typing import Dict

@@ -134,7 +134,7 @@ def smooth_annotations(segmentation: List[int], gaussian_sigma: float = 3) -> Li
 
     return new_annotation
 
-  
+
 def filter_to_single_blob(masks: List[np.ndarray]) -> List[np.ndarray]:
     """Filter out tiny blobs from a list of masks. Note: The function assumes that the input masks are binary images,
     where non-zero values represent object pixels and zero values represent background pixels.
