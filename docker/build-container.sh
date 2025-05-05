@@ -2,8 +2,8 @@
 
 UID=$(id -u)
 GID=$(id -g)
-image_name=ai-palatal-rugoscopy
-container_name=ai-palatal-rugoscopy-env
+image_name=my-training-base
+container_name=my-training-base-env
 hostname=$container_name
 
 while [[ $# -gt 0 ]]; do
@@ -20,12 +20,6 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-# Check whether path to data folder is provided by the user, otherwise no data will be available inside the container.
-if [[ -z $data_path ]]; then
-    echo "ERROR: Data folder not specified"
-    exit 1
-fi
-
 docker build \
     --build-arg USER=$USER \
     --build-arg UID=$UID \
@@ -34,8 +28,7 @@ docker build \
 
 docker run -it \
     --gpus all \
-    --volume $(dirname `pwd`):/home/$USER/workspace/ia-palatal-rugoscopy \
-    --volume $data_path:/home/$USER/data \
+    --volume $(dirname `pwd`):/home/$USER/workspace/my-training-base \
     --hostname $hostname \
     --name $container_name \
     -p 9092:6000 \
