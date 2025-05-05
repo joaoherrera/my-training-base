@@ -1,7 +1,7 @@
 [tool.black]
-line-length = 120
+line-length = 150
 include = '\.pyi?$'
 
 [tool.isort]
-line_length = 120
+line_length = 150
 profile = "black"
