@@ -1,10 +1,10 @@
-# AI Palatal Rugoscopy
+# My Training base
 
-Instance segmentation of palatal rugae patterns using Deep Learning.
+Algorithms for training instance segmentation and classification models.
 
 ## Development environment
 
-By default, we use a [Docker](https://www.docker.com/) container as the development environment.
+By default, I use a [Docker](https://www.docker.com/) container as the development environment.
 Before building the image, please ensure you have the following resources available:
 
 - NVIDIA GPU with an updated driver version
@@ -14,21 +14,7 @@ The script [`docker/build-container.sh`](docker/build-container.sh) automaticall
 
 ```shell
 cd docker
-bash build_container.sh --data-path <DATA_PATH>
-```
-
-Where:
-
-- DATA_PATH is the path to a folder containing the dataset (images).
-
-## Image convertion script
-
-There's a script that might be helpful if you need to convert images. In our case, from HEIC to something else that CVAT supports. 
-
-Use it as such:
-
-```shell
-./scripts/image_converter.sh --from heic --to jpg --in /path/to/input/directory [--out /path/to/output/directory]
+bash build_container.sh
 ```
 
 ## Dataset Preprocessing
